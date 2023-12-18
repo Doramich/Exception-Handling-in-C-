@@ -1,0 +1,25 @@
+#include <iostream>
+
+int main() {
+    try {
+        // Code that may potentially throw an exception
+        int dividend = 10;
+        int divisor = 0;
+
+        if (divisor == 0) {
+            throw "Division by zero error"; // Throwing an exception
+        }
+
+        int result = dividend / divisor;
+
+        std::cout << "Result: " << result << std::endl;
+    }
+    catch (const char* error) { // Catching an exception of type const char*
+        std::cerr << "Exception caught: " << error << std::endl;
+    }
+    catch (...) { // Catching all other exceptions
+        std::cerr << "Unknown exception caught" << std::endl;
+    }
+
+    return 0;
+}
